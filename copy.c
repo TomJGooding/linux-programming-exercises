@@ -36,6 +36,10 @@ int main(int argc, char *argv[]) {
             exit(EXIT_FAILURE);
         }
     }
+    if (n_read == -1) {
+        perror(src_path);
+        exit(EXIT_FAILURE);
+    }
 
     if (close(src_fd) == -1) {
         perror(src_path);
